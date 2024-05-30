@@ -1,0 +1,22 @@
+.p {
+  margin: 0;
+  color: #6e6e6e;
+}
+
+.s {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.m {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.l {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}
