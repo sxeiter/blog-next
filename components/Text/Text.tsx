@@ -1,13 +1,13 @@
-import { PProps } from "./P.props";
-import styles from "./P.module.css";
+import { TextProps } from "./Text.props";
+import styles from "./Text.module.css";
 import cn from "classnames";
 
-export const P = ({
+export const Text = ({
   children,
   size = "m",
   className,
   ...props
-}: PProps): JSX.Element => {
+}: TextProps): JSX.Element => {
   return (
     <p
       className={cn(styles.p, className, {

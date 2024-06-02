@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import { Card, Htag, P, Tag } from "@/components";
-import { Button } from "@/components/Button/Button";
+import { Card } from "@/components";
 
 export const metadata: Metadata = {
   title: "Проект блога",

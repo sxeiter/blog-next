@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Htag } from "../Htag/Htag";
-import { P } from "../P/P";
+import { Text } from "../Text/Text";
 import { Tag } from "../Tag/Tag";
 import styles from "./Card.module.css";
 import { CardProps } from "./Card.props";
@@ -35,10 +35,10 @@ export const Card = ({
         <Htag className={styles.title} tag="h3">
           Как работать с CSS GRID
         </Htag>
-        <P size="s">
+        <Text size="s">
           Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему
           сеток в CSS. Гриды подойдут и для верстки основных областей страницы..
-        </P>
+        </Text>
       </div>
       <div className={styles.footer}>
         <Tag color="ghost">3 минуты</Tag>
