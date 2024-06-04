@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Card } from "@/components";
+import { Like } from "@/components/Like/Like";
 
 export const metadata: Metadata = {
   title: "Проект блога",
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Card />
+      <Like />
     </>
   );
 }

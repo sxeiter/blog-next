@@ -1,21 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Like.module.css";
 import LikeIcon from "./like.svg";
 
 export const Like = () => {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState(false);
+  const [buttonClass, setButtonClass] = useState(styles.like);
+
+  useEffect(() => {
+    if (likes) {
+      setButtonClass(`${styles.like} ${styles.active}`);
+    } else {
+      setButtonClass(styles.like);
+    }
+  }, [likes]);
 
   const handleLikeClick = () => {
-    setLikes(likes + 1);
+    setLikes(!likes);
   };
 
   return (
-    <div className={styles.likeContainer}>
-      <p className={styles.likeCount}>{likes}</p>
-      <button className={styles.like} onClick={handleLikeClick}>
-        <LikeIcon className={styles.likeIcon} />
-      </button>
-    </div>
+    <button className={buttonClass} onClick={handleLikeClick}>
+      <LikeIcon className={styles.likeIcon} />
+    </button>
   );
 };
