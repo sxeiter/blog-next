@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Card } from "@/components";
 import { Like } from "@/components/Like/Like";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Проект блога",
@@ -10,7 +11,20 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Card />
+      <div className={styles.wrapper}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
       <Like id={1} />
     </>
   );
