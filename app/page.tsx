@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Card />
-      <Like />
+      <Like id={1} />
     </>
   );
 }
