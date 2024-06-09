@@ -2,3 +2,10 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 10px;
+}

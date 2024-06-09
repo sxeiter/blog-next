@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import { Htag } from "@/components";
+import GithubIcon from "../public/github.svg";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={openSans.className}>{children}</body>
+      <body className={openSans.className}>
+        <div className="header">
+          <Htag tag="h1">.my_blog</Htag>
+          <GithubIcon />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

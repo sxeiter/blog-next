@@ -1,21 +1,36 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Like.module.css";
-import LikeIcon from "./like.svg";
+import LikeIcon from "../../public/like.svg";
 
-export const Like = () => {
-  const [likes, setLikes] = useState(0);
+export const Like = ({ id }: { id: number }) => {
+  const [likes, setLikes] = useState(false);
+  const [buttonClass, setButtonClass] = useState(styles.like);
 
-  const handleLikeClick = () => {
-    setLikes(likes + 1);
+  const handleLikeClick = async () => {
+    setLikes(!likes);
+    const response: Response = await fetch(`NEXT_PUBLIC_DOMAIN/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Ошибочка");
+    }
   };
 
+  useEffect(() => {
+    if (likes) {
+      setButtonClass(`${styles.like} ${styles.active}`);
+    } else {
+      setButtonClass(styles.like);
+    }
+  }, [likes]);
+
   return (
-    <div className={styles.likeContainer}>
-      <p className={styles.likeCount}>{likes}</p>
-      <button className={styles.like} onClick={handleLikeClick}>
-        <LikeIcon className={styles.likeIcon} />
-      </button>
-    </div>
+    <button className={buttonClass} onClick={handleLikeClick}>
+      <LikeIcon className={styles.likeIcon} />
+    </button>
   );
 };

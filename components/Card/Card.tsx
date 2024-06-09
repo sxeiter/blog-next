@@ -5,8 +5,8 @@ import { Tag } from "../Tag/Tag";
 import styles from "./Card.module.css";
 import { CardProps } from "./Card.props";
 import cn from "classnames";
-import { Like } from "../Like/Like";
 import { Button } from "../Button/Button";
+import LikeIcon from "../../public/likeIcon.svg";
 
 export const Card = ({
   children,
@@ -20,7 +20,7 @@ export const Card = ({
           width={300}
           height={192}
           alt="картинка"
-          src={require("./card.png")}
+          src={require("../../public/card.png")}
           className={styles.image}
         />
       </div>
@@ -30,7 +30,7 @@ export const Card = ({
             <Tag>Front-end</Tag>
             <Tag color="ghost">1 месяц назад</Tag>
           </div>
-          <Like />
+          <LikeIcon />
         </div>
         <Htag className={styles.title} tag="h3">
           Как работать с CSS GRID
