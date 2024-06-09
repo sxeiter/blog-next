@@ -1,7 +1,13 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
+enum TextSize {
+    s = "s",
+    m = "m",
+    l = "l",
+}
+
 export interface TextProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
-    size?: "s" | "m" | "l";
+    size?: TextSize;
     children: ReactNode;
     className?: string;
 }

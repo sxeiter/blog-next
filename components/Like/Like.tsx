@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./Like.module.css";
-import LikeIcon from "./like.svg";
+import LikeIcon from "../../public/like.svg";
 
 export const Like = ({ id }: { id: number }) => {
   const [likes, setLikes] = useState(false);
@@ -9,15 +9,12 @@ export const Like = ({ id }: { id: number }) => {
 
   const handleLikeClick = async () => {
     setLikes(!likes);
-    const response: Response = await fetch(
-      `https://jsonplaceholder.typicode.com/posts/${id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response: Response = await fetch(`NEXT_PUBLIC_DOMAIN/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     if (!response.ok) {
       throw new Error("Ошибочка");
     }

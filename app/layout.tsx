@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Htag } from "@/components";
-import GithubIcon from "./github.svg";
+import GithubIcon from "../public/github.svg";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
