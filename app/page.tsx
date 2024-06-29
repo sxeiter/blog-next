@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const cards = Array.from({ length: 12 }, (_, index) => index + 1);
+  const cards = Array.from({ length: 22 }, (_, index) => index + 1);
   return (
     <>
       <div className={styles.wrapper}>

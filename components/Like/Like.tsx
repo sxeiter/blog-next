@@ -9,12 +9,15 @@ export const Like = ({ id }: { id: number }) => {
 
   const handleLikeClick = async () => {
     setLikes(!likes);
-    const response: Response = await fetch(`NEXT_PUBLIC_DOMAIN/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response: Response = await fetch(
+      `process.env.NEXT_PUBLIC_DOMAIN/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (!response.ok) {
       throw new Error("Ошибочка");
     }
